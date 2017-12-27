@@ -1,24 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Light</string>
+        </array>
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Heavy</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RandomFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="LBJ-Lu-UWN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8I-zs-RvU">
+                                <rect key="frame" x="60" y="472" width="255" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="E8I-zs-RvU" secondAttribute="height" multiplier="51:35" id="x41-oj-arN"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Brain"/>
+                                <connections>
+                                    <action selector="randomFact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UgI-mb-jFJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fact Bank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaH-uO-ct8">
+                                <rect key="frame" x="16" y="20" width="343" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EaH-uO-ct8" secondAttribute="height" multiplier="343:121" id="9gp-BA-aaW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the Brain" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CxN-v5-KPy">
+                                <rect key="frame" x="16" y="149" width="343" height="315"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LBJ-Lu-UWN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2ae-6e-Cc5"/>
+                            <constraint firstItem="CxN-v5-KPy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3V9-9K-qbD"/>
+                            <constraint firstItem="E8I-zs-RvU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="5Db-Hv-jAC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E8I-zs-RvU" secondAttribute="trailing" constant="60" id="7jf-kL-yhd"/>
+                            <constraint firstItem="EaH-uO-ct8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FYI-sj-KNn"/>
+                            <constraint firstItem="EaH-uO-ct8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IGf-N4-DA8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EaH-uO-ct8" secondAttribute="trailing" constant="16" id="Kdh-sg-v0e"/>
+                            <constraint firstItem="CxN-v5-KPy" firstAttribute="top" secondItem="EaH-uO-ct8" secondAttribute="bottom" constant="8" id="Qwq-Hr-qqI"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="E8I-zs-RvU" secondAttribute="bottom" constant="20" id="U3g-Jb-hLB"/>
+                            <constraint firstItem="E8I-zs-RvU" firstAttribute="top" secondItem="CxN-v5-KPy" secondAttribute="bottom" constant="8" id="Vjr-eK-HrX"/>
+                            <constraint firstItem="LBJ-Lu-UWN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WHp-d0-uMW"/>
+                            <constraint firstItem="LBJ-Lu-UWN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fxP-aM-gvV"/>
+                            <constraint firstAttribute="bottom" secondItem="LBJ-Lu-UWN" secondAttribute="bottom" id="v9w-5t-1ng"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CxN-v5-KPy" secondAttribute="trailing" constant="16" id="zDe-iv-Gsu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="CxN-v5-KPy" id="cLr-5n-zBV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-98.400000000000006" y="117.39130434782609"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Brain" width="460" height="340"/>
+        <image name="background" width="1920" height="1080"/>
+    </resources>
 </document>
